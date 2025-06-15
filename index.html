@@ -299,8 +299,6 @@
 
 
 
-<!-- Section Leistungen! -->
-
 <section class="bg-white border-b py-6">
   <div class="container max-w-5xl mx-auto m-8" data-aos="fade-left">
     <h1 class="w-full my-1 text-3xl sm:text-5xl font-bold leading-tight text-center text-gray-800" id="services">
@@ -310,22 +308,24 @@
       <div class="h-1 mx-auto bg-purple-600 w-96 my-0 py-0 rounded-t"></div>
     </div>
 
-    <div class="container mx-auto pt-4 pb-10 lg:px-12 sm:px-5">
-      <div class="relative">
+    <div class="pt-4 pb-10 px-4 sm:px-6 lg:px-12">
 
-        <!-- Neue Navigationspfeile (mobil-only) -->
-        <button class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 sm:hidden bg-purple-600 text-white p-2 rounded-full shadow" onclick="scrollLeft()">
+      <!-- Mobile-Version mit Swipe -->
+      <div class="relative lg:hidden overflow-hidden">
+
+        <!-- Navigationspfeile -->
+        <button id="btn-service-left" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-purple-600 text-white p-2 rounded-full shadow" onclick="scrollServicesLeft()">
           &larr;
         </button>
-        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 sm:hidden bg-purple-600 text-white p-2 rounded-full shadow" onclick="scrollRight()">
+        <button id="btn-service-right" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-purple-600 text-white p-2 rounded-full shadow" onclick="scrollServicesRight()">
           &rarr;
         </button>
 
-        <!-- Swipebar auf Mobil, Grid ab lg -->
-        <div id="service-cards" class="flex lg:grid lg:grid-cols-3 gap-4 overflow-x-auto snap-x snap-mandatory pr-4 -mx-2 sm:mx-0 lg:overflow-visible scroll-smooth">
+        <!-- Scrollbarer Bereich -->
+        <div id="service-cards" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth min-w-0 px-2" style="scroll-padding-left: 1rem;">
 
-          <!-- DJ für Events & Feiern -->
-          <div class="flex-shrink-0 w-[85vw] snap-start lg:w-auto p-2">
+          <!-- Karten -->
+          <div class="flex-shrink-0 w-[85vw] snap-start p-2" data-snap-card>
             <div class="bg-zinc-900 text-gray-100 shadow rounded-xl px-5 py-6 h-full">
               <i class="mdi mdi-music-circle-outline text-white mb-5 text-5xl block"></i>
               <span class="font-bold text-base sm:text-xl">DJ für Events &amp; Feiern</span>
@@ -335,8 +335,7 @@
             </div>
           </div>
 
-          <!-- Ton- & Lichttechnik -->
-          <div class="flex-shrink-0 w-[85vw] snap-start lg:w-auto p-2">
+          <div class="flex-shrink-0 w-[85vw] snap-start p-2" data-snap-card>
             <div class="bg-zinc-900 text-gray-100 shadow rounded-xl px-5 py-6 h-full">
               <i class="mdi mdi-speaker-wireless text-white mb-5 text-5xl block"></i>
               <span class="font-bold text-base sm:text-xl">Ton- &amp; Lichttechnik</span>
@@ -346,8 +345,7 @@
             </div>
           </div>
 
-          <!-- Komplette Eventbegleitung -->
-          <div class="flex-shrink-0 w-[85vw] snap-start lg:w-auto p-2">
+          <div class="flex-shrink-0 w-[85vw] snap-start p-2" data-snap-card>
             <div class="bg-zinc-900 text-gray-100 shadow rounded-xl px-5 py-6 h-full">
               <i class="mdi mdi-clipboard-check-outline text-white mb-5 text-5xl block"></i>
               <span class="font-bold text-base sm:text-xl">Komplette Eventbegleitung</span>
@@ -358,24 +356,87 @@
           </div>
 
         </div>
+      </div>
 
+      <!-- Desktop-Version mit Grid -->
+      <div class="hidden lg:grid lg:grid-cols-3 gap-4 mt-4">
+        <div class="bg-zinc-900 text-gray-100 shadow rounded-xl px-5 py-6 h-full">
+          <i class="mdi mdi-music-circle-outline text-white mb-5 text-5xl block"></i>
+          <span class="font-bold text-base sm:text-xl">DJ für Events &amp; Feiern</span>
+          <p class="mt-2 text-left text-sm sm:text-base">
+            Ich sorge für Stimmung auf Hochzeiten, Firmenfeiern, Geburtstagen, Clubs, Stadtfesten oder großen Bühnen. Mit Erfahrung, Gespür fürs Publikum und dem richtigen Beat zur richtigen Zeit wird jede Veranstaltung zum Highlight.
+          </p>
+        </div>
+
+        <div class="bg-zinc-900 text-gray-100 shadow rounded-xl px-5 py-6 h-full">
+          <i class="mdi mdi-speaker-wireless text-white mb-5 text-5xl block"></i>
+          <span class="font-bold text-base sm:text-xl">Ton- &amp; Lichttechnik</span>
+          <p class="mt-2 text-left text-sm sm:text-base">
+            Ich bringe nicht nur die Musik mit, sondern auch das passende Setup. Vom satten Sound bis zur stimmungsvollen Lichtshow – inklusive Bühnenaufbau, Nebelmaschine und Lichteffekten – alles aus einer Hand.
+          </p>
+        </div>
+
+        <div class="bg-zinc-900 text-gray-100 shadow rounded-xl px-5 py-6 h-full">
+          <i class="mdi mdi-clipboard-check-outline text-white mb-5 text-5xl block"></i>
+          <span class="font-bold text-base sm:text-xl">Komplette Eventbegleitung</span>
+          <p class="mt-2 text-left text-sm sm:text-base">
+            Du willst dich um nichts kümmern? Ich biete dir ein Rundum-Sorglos-Paket: individuelle Planung, Technik, Musik und Ablauf – perfekt abgestimmt auf deinen Event. Du genießt die Party, ich mach den Rest.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-
-
-
-<!-- Scroll-Logik -->
 <script>
-  function scrollLeft() {
-    document.getElementById('service-cards').scrollBy({ left: -300, behavior: 'smooth' });
+  function updateServiceButtons() {
+    const container = document.getElementById('service-cards');
+    const leftBtn = document.getElementById('btn-service-left');
+    const rightBtn = document.getElementById('btn-service-right');
+
+    if (!container || !leftBtn || !rightBtn) return;
+
+    const scrollLeft = container.scrollLeft;
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    const tolerance = 5;
+
+    // Debug-Ausgabe (optional)
+    // console.log('scrollLeft:', scrollLeft, 'max:', maxScrollLeft);
+
+    leftBtn.style.display = scrollLeft <= tolerance ? 'none' : 'block';
+    rightBtn.style.display = scrollLeft >= maxScrollLeft - tolerance ? 'none' : 'block';
   }
-  function scrollRight() {
-    document.getElementById('service-cards').scrollBy({ left: 300, behavior: 'smooth' });
+
+  function scrollToServiceCard(direction = 'right') {
+    const container = document.getElementById('service-cards');
+    const card = container.querySelector('[data-snap-card]');
+    if (!container || !card) return;
+
+    const gapPx = 16; // entspricht Tailwind `gap-4`
+    const scrollStep = card.offsetWidth + gapPx;
+
+    container.scrollBy({ left: direction === 'right' ? scrollStep : -scrollStep, behavior: 'smooth' });
+
+    // Nach Scrollen neu bewerten
+    setTimeout(updateServiceButtons, 500);
   }
+
+  function scrollServicesLeft() {
+    scrollToServiceCard('left');
+  }
+
+  function scrollServicesRight() {
+    scrollToServiceCard('right');
+  }
+
+  // Buttons initial aktivieren – aber mit etwas Verzögerung
+  window.addEventListener('load', () => {
+    setTimeout(updateServiceButtons, 300); // wartet, bis Layout fertig ist
+  });
 </script>
+
+
+
 
 
 
@@ -665,7 +726,7 @@
 
 
 
-
+<!--Rückblick Events -->
 
 
 
