@@ -828,28 +828,25 @@
 <!-- Neue Scroll-Logik (snapt zur nächsten Karte) -->
 <script>
   function updateScrollButtons(containerId) {
-    const container = document.getElementById(containerId);
-    const leftBtn = document.getElementById('btn-scroll-left');
-    const rightBtn = document.getElementById('btn-scroll-right');
+  const container = document.getElementById(containerId);
+  const leftBtn = document.getElementById('btn-scroll-left');
+  const rightBtn = document.getElementById('btn-scroll-right');
 
-    const scrollLeft = container.scrollLeft;
-    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+  const scrollLeft = container.scrollLeft;
+  const maxScrollLeft = container.scrollWidth - container.clientWidth;
+  const tolerance = 5;
 
-    // Toleranz wegen float-Rundung
-    const tolerance = 5;
-
-    if (scrollLeft <= tolerance) {
-      leftBtn.style.display = 'none';
-    } else {
-      leftBtn.style.display = 'block';
-    }
-
-    if (scrollLeft >= maxScrollLeft - tolerance) {
-      rightBtn.style.display = 'none';
-    } else {
-      rightBtn.style.display = 'block';
-    }
+  if (window.innerWidth < 640) {
+    // Nur auf Mobil anzeigen
+    leftBtn.style.display = scrollLeft <= tolerance ? 'none' : 'block';
+    rightBtn.style.display = scrollLeft >= maxScrollLeft - tolerance ? 'none' : 'block';
+  } else {
+    // Auf Desktop ganz verstecken
+    leftBtn.style.display = 'none';
+    rightBtn.style.display = 'none';
   }
+}
+
 
   function scrollToCard(containerId, direction = 'right') {
     const container = document.getElementById(containerId);
