@@ -680,12 +680,14 @@
 
     <div class="relative">
       <!-- Navigationspfeile (mobil-only) -->
-      <button class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 sm:hidden bg-purple-600 text-white p-2 rounded-full shadow" onclick="scrollBackLeft()">
-        &larr;
-      </button>
-      <button class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 sm:hidden bg-purple-600 text-white p-2 rounded-full shadow" onclick="scrollBackRight()">
-        &rarr;
-      </button>
+
+<button id="btn-scroll-left" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 sm:hidden bg-purple-600 text-white p-2 rounded-full shadow" onclick="scrollBackLeft()">
+  &larr;
+</button>
+
+<button id="btn-scroll-right" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 sm:hidden bg-purple-600 text-white p-2 rounded-full shadow" onclick="scrollBackRight()">
+  &rarr;
+</button>
 
       <!-- Scrolling Container -->
       <div id="rueckblick-cards"
@@ -772,26 +774,33 @@
     const scrollLeft = container.scrollLeft;
     const maxScrollLeft = container.scrollWidth - container.clientWidth;
 
-    leftBtn.style.display = scrollLeft > 0 ? 'block' : 'none';
-    rightBtn.style.display = scrollLeft < maxScrollLeft - 10 ? 'block' : 'none';
+    // Toleranz wegen float-Rundung
+    const tolerance = 5;
+
+    if (scrollLeft <= tolerance) {
+      leftBtn.style.display = 'none';
+    } else {
+      leftBtn.style.display = 'block';
+    }
+
+    if (scrollLeft >= maxScrollLeft - tolerance) {
+      rightBtn.style.display = 'none';
+    } else {
+      rightBtn.style.display = 'block';
+    }
   }
 
   function scrollToCard(containerId, direction = 'right') {
     const container = document.getElementById(containerId);
-    const cards = container.querySelectorAll('[data-snap-card]');
-    const scrollLeft = container.scrollLeft;
-    const containerWidth = container.clientWidth;
+    const scrollAmount = container.clientWidth;
 
-    let targetScroll = scrollLeft;
+    const newScroll = direction === 'right'
+      ? container.scrollLeft + scrollAmount
+      : container.scrollLeft - scrollAmount;
 
-    if (direction === 'right') {
-      targetScroll += containerWidth;
-    } else {
-      targetScroll -= containerWidth;
-    }
+    container.scrollTo({ left: newScroll, behavior: 'smooth' });
 
-    container.scrollTo({ left: targetScroll, behavior: 'smooth' });
-
+    // Buttons nach Scroll aktualisieren (leichte Verzögerung für smooth scroll)
     setTimeout(() => updateScrollButtons(containerId), 500);
   }
 
@@ -803,6 +812,7 @@
     scrollToCard('rueckblick-cards', 'right');
   }
 
+  // Initial prüfen nach Laden
   window.addEventListener('DOMContentLoaded', () => updateScrollButtons('rueckblick-cards'));
 </script>
 
