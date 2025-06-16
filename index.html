@@ -42,6 +42,10 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Flowbite Datepicker -->
+<link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/datepicker.min.css" rel="stylesheet" />
+
 </head>
 
     <body>
@@ -1071,14 +1075,33 @@
       </select>
     </div>
 
-    <!-- Wunschtermin -->
-    <div>
-      <div class="flex justify-between items-center">
-        <label class="block mb-1 font-semibold" for="datum">Wunschtermin</label>
-        <span class="text-xs text-gray-400 italic">optional</span>
-      </div>
-      <input type="date" id="datum" name="datum" class="w-full max-w-full sm:max-w-none px-4 py-3 rounded-md text-black shadow-inner text-base" />
-    </div>
+   <!-- Wunschtermin -->
+<div>
+  <div class="flex justify-between items-center">
+    <label class="block mb-1 font-semibold" for="datum">Wunschtermin</label>
+    <span class="text-xs text-gray-400 italic">optional</span>
+  </div>
+
+  <!-- Mobil: Datepicker sichtbar -->
+  <input
+    id="datum-mobil"
+    name="datum"
+    type="text"
+    datepicker
+    datepicker-format="dd.mm.yyyy"
+    placeholder="Wunschtermin auswählen"
+    class="w-full px-4 py-3 rounded-md text-black shadow-inner text-base block sm:hidden"
+  />
+
+  <!-- Desktop: normales Date-Feld -->
+  <input
+    id="datum-desktop"
+    name="datum"
+    type="date"
+    class="w-full px-4 py-3 rounded-md text-black shadow-inner text-base hidden sm:block"
+  />
+</div>
+
 
     <!-- Nachricht -->
     <div>
@@ -1194,6 +1217,10 @@
                 Swal.fire("Vielen Dank, dass du dich für den Newsletter angemeldet hast!", "Lorem ipsum dolor sit amet, consectetur adipiscing", "success");
             });
   </script>
+
+<!-- Flowbite Datepicker -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/datepicker.min.js"></script>
+
  </body>
 </html>
 
