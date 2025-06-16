@@ -1252,6 +1252,20 @@
 <!-- Flowbite Datepicker -->
 <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/datepicker.min.js"></script>
 
+<script>
+  // Mobile Datepicker initialisieren mit Footer
+  const dp = new Datepicker(document.getElementById('datum-mobil'), {
+    autoHide: true,
+    showFooter: true,
+    footerHtml: '<button type="button" class="text-sm text-purple-600">Fertig</button>'
+  });
+</script>
+
+
+
+
+
+
  </body>
 </html>
 
