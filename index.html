@@ -43,6 +43,24 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+<style>
+  /* Grundstil für die mobilen + Desktop-Inputs */
+  #datum-mobil,
+  #datum-desktop {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: white;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Mehr Platz rechts für das Icon */
+  #datum-mobil {
+    padding-right: 3rem;
+  }
+</style>
+
 <!-- Flowbite Datepicker -->
 <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/datepicker.min.css" rel="stylesheet" />
 
@@ -1086,23 +1104,24 @@
     <span class="text-xs text-gray-400 italic">optional</span>
   </div>
 
-  <!-- Mobil -->
-  <div class="relative block sm:hidden">
-    <input
-      id="datum-mobil"
-      name="datum"
-      type="text"
-      datepicker
-      datepicker-format="dd.mm.yyyy"
-      placeholder="Wunschtermin auswählen"
-      class="w-full px-4 py-3 pr-12 rounded-md text-black shadow-inner text-base bg-white placeholder:text-gray-500"
-    />
-    <div class="pointer-events-none absolute inset-y-0 right-4 flex items-center text-gray-400">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-      </svg>
-    </div>
+
+<!-- Mobil -->
+<div class="relative block sm:hidden">
+  <input
+    id="datum-mobil"
+    name="datum"
+    type="text"
+    datepicker
+    datepicker-format="dd.mm.yyyy"
+    placeholder="Wunschtermin auswählen"
+  />
+  <!-- Icon-Overlay -->
+  <div class="pointer-events-none absolute inset-y-0 right-4 flex items-center text-gray-400">
+    ...
   </div>
+</div>
+
+
 
   <!-- Desktop -->
   <input
