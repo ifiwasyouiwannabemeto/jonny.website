@@ -1288,13 +1288,25 @@ class="w-full px-4 py-3 pr-12 rounded-md shadow-inner text-base bg-white text-bl
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
+    const burgerButton = document.querySelector('.sm\\:hidden button');
     const navLinks = mobileMenu.querySelectorAll('a');
 
+    // Schließt Menü beim Klick auf einen Menüpunkt
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        // Menü schließen
         mobileMenu.classList.add('hidden');
       });
+    });
+
+    // Schließt Menü beim Klick außerhalb des Menüs/Burgers
+    document.addEventListener('click', function(event) {
+      if (
+        !mobileMenu.contains(event.target) &&
+        event.target !== burgerButton &&
+        !burgerButton.contains(event.target)
+      ) {
+        mobileMenu.classList.add('hidden');
+      }
     });
   });
 </script>
