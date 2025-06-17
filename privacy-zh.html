@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <meta name="keywords" content="DJ Jonny, 隐私政策, GDPR, 联系表单, 数据保护, 奥地利DJ" />
-  <meta name="description" content="DJ Jonny 官方网站的隐私政策 – 符合GDPR和奥地利法律。了解您的数据如何被处理。" />
+  
+  <meta name="keywords" content="DJ Jonny, 隐私政策, GDPR, 数据处理, 联系表格, DJ 奥地利" />
+  <meta name="description" content="DJ Jonny官方网站的隐私政策 - 符合GDPR和TKG 2003。了解您的数据如何处理。" />
   <meta name="author" content="DJ Jonny" />
-
+  
+  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="DJ Jonny – 隐私政策" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.djjonny.at/privacy-zh.html" />
   <meta property="og:image" content="https://www.djjonny.at/images/dj-jonny.jpg" />
-  <meta property="og:description" content="DJ Jonny 的所有隐私相关信息 – 符合GDPR，清晰易懂。" />
+  <meta property="og:description" content="在这里您可以找到DJ Jonny关于数据保护的所有信息 - 清晰且符合GDPR。" />
 
   <title>DJ Jonny – 隐私政策</title>
 
@@ -34,7 +35,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-  /* Grundstil für die mobilen + Desktop-Inputs */
+  /* 移动端和桌面端输入框基本样式 */
   #datum-mobil,
   #datum-desktop {
     width: 100%;
@@ -45,17 +46,20 @@
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
   }
 
-  /* Mehr Platz rechts für das Icon */
+  /* 为图标右侧留更多空间 */
   #datum-mobil {
     padding-right: 3rem;
   }
 </style>
 <body>
 
-<a href="index-zh.html" class="fixed top-20 left-4 z-50 bg-purple-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-purple-700 transition hidden sm:inline-block">
-  ← 返回主页
-</a>
 
+  <a href="index-zh.html" class="fixed top-20 left-4 z-50 bg-purple-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-purple-700 transition hidden sm:inline-block">
+    ← 返回首页
+  </a>
+
+
+<!-- 页眉 -->
 <header class="fixed top-0 z-50 w-full bg-white shadow">
   <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
     <a href="index-zh.html" class="flex items-center text-gray-900">
@@ -63,145 +67,223 @@
     </a>
 
     <nav class="hidden sm:flex gap-6 text-base items-center">
-      <a href="index-zh.html#recent-events" class="hover:text-purple-600">亮点</a>
-      <a href="index-zh.html#blog" class="hover:text-purple-600">参考</a>
-      <a href="index-zh.html#next-events" class="hover:text-purple-600">即将举行的活动</a>
+      <a href="index-zh.html#recent-events" class="hover:text-purple-600">活动回顾</a>
+      <a href="index-zh.html#blog" class="hover:text-purple-600">客户评价</a>
+      <a href="index-zh.html#next-events" class="hover:text-purple-600">近期活动</a>
       <a href="index-zh.html#about-me" class="hover:text-purple-600">关于我</a>
-      <a href="index-zh.html#services" class="hover:text-purple-600">服务</a>
+      <a href="index-zh.html#services" class="hover:text-purple-600">服务项目</a>
     </nav>
 
-    <div class="hidden sm:flex gap-2 items-center">
-      <a href="privacy.html" class="flag-icon flag-icon-de w-6 h-6 rounded" title="Deutsch"></a>
-      <a href="privacy-en.html" class="flag-icon flag-icon-us w-6 h-6 rounded" title="English"></a>
-      <a href="privacy-zh.html" class="flag-icon flag-icon-cn w-6 h-6 rounded" title="中文"></a>
-      <a href="privacy-ru.html" class="flag-icon flag-icon-ru w-6 h-6 rounded" title="Русский"></a>
+    <div class="flex items-center gap-3">
+      <div class="hidden sm:flex gap-2 items-center">
+<a href="privacy.html" class="flag-icon flag-icon-de w-6 h-6 drop-shadow-[0_-1px_1px_rgba(0,0,0,0.3)] rounded" title="Deutsch"></a>
+<a href="privacy-en.html" class="flag-icon flag-icon-us w-6 h-6 drop-shadow-[0_-1px_1px_rgba(0,0,0,0.3)] rounded" title="English"></a>
+<a href="privacy-zh.html" class="flag-icon flag-icon-cn w-6 h-6 drop-shadow-[0_-1px_1px_rgba(0,0,0,0.3)] rounded" title="中文"></a>
+<a href="privacy-ru.html" class="flag-icon flag-icon-ru w-6 h-6 drop-shadow-[0_-1px_1px_rgba(0,0,0,0.3)] rounded" title="Русский"></a>
+      </div>
+      <div class="sm:hidden">
+        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-purple-600 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="sm:hidden hidden fixed top-14 left-0 right-0 bg-white z-40 shadow-lg">
+    <div class="flex flex-col items-center gap-4 py-4">
+      <a href="index-zh.#recent-events" class="text-purple-700 font-medium hover:text-purple-900">活动回顾</a>
+      <a href="index-zh.#blog" class="text-purple-700 font-medium hover:text-purple-900">客户评价</a>
+      <a href="index-zh.#next-events" class="text-purple-700 font-medium hover:text-purple-900">近期活动</a>
+      <a href="index-zh.#about-me" class="text-purple-700 font-medium hover:text-purple-900">关于我</a>
+      <a href="index-zh.#services" class="text-purple-700 font-medium hover:text-purple-900">服务项目</a>
+      <div class="flex gap-4 pt-2">
+ <a href="privacy.html" class="flag-icon flag-icon-de w-6 h-6 drop-shadow-[0_-1px_1px_rgba(0,0,0,0.3)] rounded" title="Deutsch"></a>
+<a href="privacy-en.html" class="flag-icon flag-icon-us w-6 h-6 drop-shadow-[0_-1px_1px_rgba(0,0,0,0.3)] rounded" title="English"></a>
+<a href="privacy-zh.html" class="flag-icon flag-icon-cn w-6 h-6 drop-shadow-[0_-1px_1px_rgba(0,0,0,0.3)] rounded" title="中文"></a>
+<a href="privacy-ru.html" class="flag-icon flag-icon-ru w-6 h-6 drop-shadow-[0_-1px_1px_rgba(0,0,0,0.3)] rounded" title="Русский"></a>
+      </div>
     </div>
   </div>
 </header>
 
+<!-- 标题区域 -->
 <div class="header h-[150px] sm:h-[300px] relative flex items-center justify-center pt-6 sm:pt-12">
   <h1 class="text-white text-2xl sm:text-5xl underline text-center">隐私政策</h1>
 </div>
 
+<!-- 内容 -->
 <section class="bg-white border-b py-8">
   <div class="container max-w-5xl mx-auto px-4 py-6 sm:px-0 sm:py-8" data-aos="fade-left">
+
     <div class="text-gray-800 text-base leading-relaxed space-y-6">
-      <h2 class="text-xl font-semibold mb-4 text-center">你的数据，我来负责</h2>
+      <h2 class="text-xl font-semibold mb-4 text-center">您的数据 - 我的责任</h2>
 
-      <p>我们重视您的隐私。我们根据欧盟《通用数据保护条例》(GDPR) 及奥地利《电信法》(TKG 2003) 处理您的个人数据。以下是我们收集与使用数据的方式说明。</p>
+      <p>保护您的个人数据对我尤为重要。因此，我仅根据法律规定(GDPR, TKG 2003)处理您的数据。下文我将告知您在我的网站范围内处理数据的类型、范围和目的。</p>
 
-      <h3 class="text-lg font-semibold">数据负责人</h3>
+      <h3 class="text-lg font-semibold">负责人</h3>
       <p>
         <strong>Jonny Fankhauser</strong><br />
         DJ Jonny<br />
         Höf 52<br />
         5020 Taxenbach<br />
-        Austria<br />
-        邮箱：<a href="mailto:office@dj-jonny.at" class="text-purple-600 hover:underline">office@dj-jonny.at</a><br />
-        电话：+43 677 61667518
+        奥地利<br />
+        电子邮件: <a href="mailto:office@dj-jonny.at" class="text-purple-600 hover:underline">office@dj-jonny.at</a><br />
+        电话: +43 677 61667518
       </p>
 
-      <h3 class="text-lg font-semibold">网站托管</h3>
-      <p>本网站通过 <strong>GitHub Pages</strong> 托管，域名由 <strong>World4You Internet Services GmbH</strong>（奥地利林茨）管理。访问网站时，技术数据（IP地址、浏览器类型、访问时间、操作系统）将被记录，仅用于安全和技术维护目的，不作个人数据分析。</p>
+      <h3 class="text-lg font-semibold">主机托管</h3>
+      <p>
+        本网站托管于<strong>GitHub Pages</strong>。域名由奥地利林茨的<strong>World4You Internet Services GmbH</strong>公司管理，地址：Hafenstraße 35, 4020 Linz。<br />
+        访问网站时，技术数据(IP地址、时间、浏览器类型、操作系统)会自动收集并存储在所谓的服务器日志文件中。这些数据仅用于系统安全和错误分析，不会进行个人评估。
+      </p>
 
-      <h3 class="text-lg font-semibold">联系表单</h3>
-      <p>如果您通过本网站表单与我联系，将收集以下数据：</p>
+      <h3 class="text-lg font-semibold">联系表格</h3>
+      <p>
+        当您通过联系表格与我联系时，将传输以下信息：
+      </p>
       <ul class="list-disc list-inside ml-4">
-        <li>姓名（必填）</li>
-        <li>电子邮件地址（必填）</li>
-        <li>电话号码（可选）</li>
-        <li>活动类型（可选）</li>
-        <li>首选日期（可选）</li>
-        <li>留言（必填）</li>
+        <li>姓名(必填)</li>
+        <li>电子邮件地址(必填)</li>
+        <li>电话号码(选填)</li>
+        <li>活动类型(选填)</li>
+        <li>期望日期(选填)</li>
+        <li>留言(必填)</li>
+      </ul>
+   <p>
+  数据处理通过<strong>Formspree</strong>服务(Formspree Inc., 美国)进行。您的信息仅用于处理您的请求，不会用于广告目的。<br />
+  <strong>除非有法律保留义务，否则数据通常最迟在6个月后删除。</strong>
+</p>
+
+    <h3 class="text-lg font-semibold">Cookie、脚本和跟踪</h3>
+<p>
+  本网站<strong>不使用Cookie用于广告、分析或跟踪目的</strong>。仅使用技术上必要的脚本(例如用于动画或表单功能)，这些脚本不存储个人数据。
+</p>
+<p>
+  为了显示和运行网站，通过所谓的内容分发网络(CDN)加载JavaScript和CSS库。这些是技术上必要的过程，不会收集或存储个人数据。
+</p>
+
+
+      <h3 class="text-lg font-semibold">外部链接(社交媒体)</h3>
+      <p>
+        本网站包含指向外部平台(TikTok、Instagram、YouTube、Spotify)的链接。访问这些链接时适用各自第三方提供商的隐私政策。我无法影响他们的数据处理。
+      </p>
+
+      <h3 class="text-lg font-semibold">您的权利</h3>
+      <p>根据GDPR，您通常拥有以下权利：</p>
+      <ul class="list-disc list-inside ml-4">
+        <li>知情权</li>
+        <li>更正权</li>
+        <li>删除权</li>
+        <li>限制处理权</li>
+        <li>数据可携权</li>
+        <li>撤回同意权</li>
+        <li>反对处理权</li>
       </ul>
       <p>
-        表单由 <strong>Formspree</strong>（美国）提供服务。您的信息仅用于处理请求，不用于广告目的。<br />
-        <strong>数据通常在6个月内删除，除非有法律保存义务。</strong>
+        如果您认为对您数据的处理违反了数据保护法，您可以向我或奥地利数据保护局投诉，网址：<a href="https://www.dsb.gv.at" class="text-purple-600 hover:underline" target="_blank">www.dsb.gv.at</a>。
       </p>
 
-      <h3 class="text-lg font-semibold">Cookies、脚本与追踪</h3>
-      <p>本网站<strong>不使用任何用于广告、分析或追踪目的的Cookies</strong>。仅加载必要的技术脚本（如动画、表单增强），不存储个人数据。</p>
-      <p>我们使用CDN（内容分发网络）加载JavaScript和CSS库，以确保网站正常运行，这些CDN不处理个人数据。</p>
-
-      <h3 class="text-lg font-semibold">外部链接（社交媒体）</h3>
-      <p>本网站包含到 TikTok、Instagram、YouTube 和 Spotify 等平台的链接。一旦点击链接，将适用该平台的隐私政策。我们无法控制第三方数据处理。</p>
-
-      <h3 class="text-lg font-semibold">你的权利</h3>
-      <p>根据GDPR，您享有以下权利：</p>
-      <ul class="list-disc list-inside ml-4">
-        <li>查阅您的数据</li>
-        <li>请求更正</li>
-        <li>请求删除</li>
-        <li>限制处理</li>
-        <li>数据可携权</li>
-        <li>撤回同意</li>
-        <li>反对数据处理</li>
-      </ul>
-      <p>如果您认为您的数据被非法处理，您可以向我或奥地利数据保护局（<a href="https://www.dsb.gv.at" class="text-purple-600 hover:underline" target="_blank">www.dsb.gv.at</a>）投诉。</p>
-
-      <h3 class="text-lg font-semibold">隐私相关联络</h3>
-      <p>如果您对数据处理有任何问题，请随时与我联系：<br />
-        邮箱：<a href="mailto:office@dj-jonny.at" class="text-purple-600 hover:underline">office@dj-jonny.at</a>
+      <h3 class="text-lg font-semibold">数据保护问题联系方式</h3>
+      <p>
+        如有任何数据保护问题或疑虑，您随时可以联系我：<br />
+        电子邮件: <a href="mailto:office@dj-jonny.at" class="text-purple-600 hover:underline">office@dj-jonny.at</a>
       </p>
+
     </div>
   </div>
 </section>
 
+
 <footer class="bg-black border-b pt-6 text-sm sm:text-base">
   <div class="container px-4 mx-auto mt-6">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-4 gap-x-6 text-white text-center sm:text-left">
-      <div class="mb-6">
-        <h5 class="uppercase font-bold mb-2.5">导航</h5>
-        <ul class="list-none mb-0">
-          <li><a href="index-zh.html#recent-events" class="hover:text-purple-600">亮点</a></li>
-          <li><a href="references.html" class="text-white">参考</a></li>
-          <li><a href="index-zh.html#next-events" class="text-white">即将举行的活动</a></li>
-          <li><a href="imprint-zh.html" class="text-white">法律声明</a></li>
-          <li><a href="privacy-zh.html" class="text-white">隐私政策</a></li>
-        </ul>
-      </div>
 
-      <div class="mb-6">
-        <h5 class="uppercase font-bold mb-2.5">社群</h5>
-        <ul class="list-none mb-0">
-          <li><a href="https://www.tiktok.com/@itsjonnyalta" target="_blank" class="text-white">TikTok</a></li>
-          <li><a href="https://www.instagram.com/dj_jonny83" target="_blank" class="text-white">Instagram</a></li>
-          <li><a href="https://youtube.com/@jonnyfankhauser" target="_blank" class="text-white">YouTube</a></li>
-          <li><a href="https://open.spotify.com/user/31qh6hzxh6mtqyjzwm7ug5vnr6gi" target="_blank" class="text-white">Spotify</a></li>
-        </ul>
-      </div>
+            
+<!-- 导航 -->
+<div class="mb-6">
+   <h5 class="uppercase font-bold mb-2.5">信息</h5>
+        <ul class="list-none">
+    <a href="index-zh.html#recent-events" class="hover:text-purple-600">活动回顾</a>
+<li><a href="references-zh.html" class="text-white">客户评价</a></li>
+    <li><a href="index-zh.html#next-events" class="text-white">近期活动</a></li>
+    <li><a href="imprint-zh.html" class="text-white">法律声明</a></li>
+    <li><a href="privacy-zh.html" class="text-white">隐私政策</a></li>
+  </ul>
+</div>
 
-      <div class="mb-6">
-        <h5 class="uppercase font-bold mb-2.5">语言</h5>
-        <ul class="list-none mb-0">
-          <li><a href="privacy.html" class="text-white">德语</a></li>
-          <li><a href="privacy-en.html" class="text-white">英语</a></li>
-          <li><a href="privacy-zh.html" class="text-white">中文</a></li>
-          <li><a href="privacy-ru.html" class="text-white">俄语</a></li>
-        </ul>
-      </div>
 
-      <div class="mb-6">
-        <h5 class="uppercase font-bold mb-2.5">信息</h5>
-        <ul class="list-none mb-0">
-          <li><a href="index-zh.html#about-me" class="text-white">关于 DJ Jonny</a></li>
-          <li><a href="index-zh.html#services" class="text-white">我的服务</a></li>
-          <li><a href="index-zh.html#kontakt" class="text-white">联系</a></li>
-        </ul>
-      </div>
+<!-- 社区 -->
+<div class="mb-6">
+   <h5 class="uppercase font-bold mb-2.5">社区</h5>
+        <ul class="list-none">
+    <li>
+      <a href="https://www.tiktok.com/@itsjonnyalta?_t=ZN-8x7U9emhFrS&_r=1" target="_blank" class="text-white">
+        TikTok
+      </a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com/dj_jonny83" target="_blank" class="text-white">
+        Instagram
+      </a>
+    </li>
+    <li>
+      <a href="https://youtube.com/@jonnyfankhauser?si=AsFBi0zSwa6UTqsl" target="_blank" class="text-white">
+        YouTube
+      </a>
+    </li>
+    <li>
+      <a href="https://open.spotify.com/user/31qh6hzxh6mtqyjzwm7ug5vnr6gi?si=9IkLQYiPR32CHTCLCZWFmg" target="_blank" class="text-white">
+        Spotify
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+<!-- 语言 -->
+<div class="mb-6">
+   <h5 class="uppercase font-bold mb-2.5">语言</h5>
+        <ul class="list-none">
+<li><a href="privacy.html" class="text-white">德语</a></li>
+<li><a href="privacy-en.html" class="text-white">英语</a></li>
+<li><a href="privacy-zh.html" class="text-white">中文</a></li>
+<li><a href="privacy-ru.html" class="text-white">俄语</a></li>
+  </ul>
+</div>
+
+<!-- 关于 -->
+<div class="mb-6">
+   <h5 class="uppercase font-bold mb-2.5">关于</h5>
+        <ul class="list-none">
+    <li><a href="index-zh.html#about-me" class="text-white">谁是DJ Jonny?</a></li>
+    <li><a href="index-zh.html#services" class="text-white">我的服务</a></li>
+    <li><a href="index-zh.html#kontakt" class="text-white">联系方式</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="text-center p-3 bg-black text-white border-t border-white text-xs">
-    © 2025 SK – 保留所有权利。
-  </div>
+ <div class="text-center p-3 bg-black text-white border-t border-white text-xs">
+        © 2025 SK – 版权所有。
+    </div>
 </footer>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-</body>
+
+
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+            integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </body>
 </html>
+
