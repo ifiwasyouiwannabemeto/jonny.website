@@ -17,16 +17,17 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="DJ Jonny – Your DJ for Parties & Events" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.djjonny.at/" />
-  <meta property="og:image" content="https://www.djjonny.at/images/dj-jonny.jpg" />
+  <meta property="og:url" content="https://www.dj-jonny.at/" />
+  <meta property="og:image" content="https://www.dj-jonny.at/images/dj-jonny.jpg" />
   <meta
     property="og:description"
     content="Whether it's a club, wedding, or company party – DJ Jonny from Kitzbühel gets the crowd dancing with the perfect beats and vibes. Book your date now!"
   />
 
-  <title>DJ Jonny – Your DJ in Kitzbühel for Weddings, Parties & Events</title>
+  <title>DJ Jonny – Your DJ for Weddings, Parties & Events</title>
 
   <!-- Stylesheets -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -521,7 +522,7 @@
         &rarr;
       </button>
 
-      <div id="referenzen-cards" class="flex snap-x snap-mandatory gap-4 px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 overflow-x-auto sm:overflow-visible scroll-smooth min-w-0" style="scroll-padding-left: 1rem;">
+      <div id="references-cards" class="flex snap-x snap-mandatory gap-4 px-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 overflow-x-auto sm:overflow-visible scroll-smooth min-w-0" style="scroll-padding-left: 1rem;">
 
         <div class="flex-shrink-0 w-full max-w-[90vw] sm:w-auto snap-start bg-white rounded-xl shadow-lg overflow-hidden mb-4">
           <div class="flex flex-col h-full">
@@ -647,7 +648,7 @@
 
 <script>
   function updateRefButtons() {
-    const container = document.getElementById('referenzen-cards');
+    const container = document.getElementById('references-cards');
     const leftBtn = document.getElementById('btn-refs-left');
     const rightBtn = document.getElementById('btn-refs-right');
 
@@ -666,7 +667,7 @@
   }
 
   function scrollToRefCard(direction = 'right') {
-    const container = document.getElementById('referenzen-cards');
+    const container = document.getElementById('references-cards');
     const cardWidth = container.querySelector('.snap-start').offsetWidth + 16; // 16px = gap-4
     const scrollAmount = direction === 'right' ? cardWidth : -cardWidth;
     container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
@@ -683,7 +684,7 @@
 
   window.addEventListener('DOMContentLoaded', updateRefButtons);
   window.addEventListener('resize', updateRefButtons);
-  document.getElementById('referenzen-cards').addEventListener('scroll', () => {
+  document.getElementById('references-cards').addEventListener('scroll', () => {
     setTimeout(updateRefButtons, 200);
   });
 </script>
